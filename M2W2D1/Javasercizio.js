@@ -30,21 +30,21 @@ ESERCIZIO 2
   num >= 20 - mostra in console "Huge"
 */
 
-let num = parseInt(prompt("scrivi un numero"))
+let number = parseInt(prompt("scrivi un numero"))
 
-if (num < 5) {
+if (number < 5) {
   console.log("Tiny")
 } 
 
-else if (num < 10) {
+else if (number < 10) {
   console.log("Small")
 } 
 
-else if (num < 15) {
+else if (number < 15) {
   console.log("Medium")
 } 
 
-else if (num < 20) {
+else if (number < 20) {
   console.log("Large")
 } 
 else {
@@ -71,13 +71,13 @@ for (let i = 0; i<=10; i++){
   Scrivi un ciclo in JavaScript per iterare da 0 a 15. Per ciascun elemento, il ciclo deve controllare the il valore corrente sia pari o dispari, e mostrare il risultato in console.
 */
 
-let i = 0
-for (let i=0; i<=15; i++){
-  if(i % 2===0){
-    console.log(`${i} il risultato è pari`)
+let a = 0
+for (let a=0; a<=15; a++){
+  if(a % 2===0){
+    console.log(`${a} il risultato è pari`)
   }
   else{
-    console.log(`${i} il risultato è dispari`)
+    console.log(`${a} il risultato è dispari`)
   }
 
 }
@@ -89,7 +89,18 @@ for (let i=0; i<=15; i++){
   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const x = parseInt(prompt("Scrivi un numero intero da 1 a 8. Ti prego non imbrogliare"));
+const y = parseInt(prompt("Scrivi un altro numero intero da 1 a 8. Ti vedo, non imbrogliare!"));
+
+if (x < 1 || x > 8 || y < 1 || y > 8) {
+  console.log("Non si imbroglia così");
+}
+else if (x === 8 || y === 8 || x + y === 8 || x - y === 8 || y - x === 8) {
+  console.log("Condizione verificata!");
+}
+else {
+  console.log("Condizione NON verificata.");
+}
 
 /* ESERCIZIO EXTRA 2
 Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
@@ -97,14 +108,27 @@ C'è una promozione in corso: se il totale del carrello supera 50, l'utente ha d
 Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const totalShoppingCart=140
+let shippingCost = 10
+if(totalShoppingCart>50){
+    shippingCost=0
+    console.log("il cliente deve pagare "+(totalShoppingCart+shippingCost))}
+else {console.log("il cliente deve pagare " +(totalShoppingCart+shippingCost))} 
+
 
 /* ESERCIZIO EXTRA 3
   Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando, usando l'algoritmo del codice precedente, se le spedizioni siano gratuite oppure no e e calcolando il totale.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const totalShoppingCart=100
+let newPrice = (totalShoppingCart-totalShoppingCart*0.20)
+let shippingCost = 10
+if(newPrice>50){
+    shippingCost=0
+    console.log("il cliente deve pagare "+(newPrice+shippingCost))}
+else {console.log("il cliente deve pagare " +(newPrice+shippingCost))} 
+
 
 /*  ESERCIZIO EXTRA 4
   Usa un operatore ternaio per assegnare ad una variabile chiamata "gender" i valori "male" o "female".
@@ -112,8 +136,17 @@ Crea un algoritmo che determini l'ammontare totale che deve essere addebitato al
   Es. se isMale e' vero, il valore di gender deve essere "male"
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let isMale = true
+let gender = isMale? "male":"female"
+console.log(gender)
 
 /* ESERCIZIO EXTRA 5
   Scrivi un algoritmo che iteri i numeri da 1 a 100, stampandoli in console. Se un valore tuttavia è multiplo di 3 (operatore modulo!), stampa al suo posto la parola "Fizz" e se il numero è multiplo di 5, stampa "Buzz". Se le condizioni si verificano entrambe, stampa "FizzBuzz".
 */
+
+for (let i= 1; i<=100; i++)
+    if (i % 5 === 0)
+    {console.log ("fizz")}
+        else if (i % 3 === 0)
+    {console.log ("buzz")}
+else{console.log(i)}
