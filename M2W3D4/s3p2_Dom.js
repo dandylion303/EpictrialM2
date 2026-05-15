@@ -18,14 +18,16 @@
 //// ESERCIZIO 8: Scrivi una funzione per cambiare il colore di background della pagina
 ////ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel footer in un altro, fittizio
 // ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
-// ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
-// ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
+//// ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; 
+// questa classe deve modificare la visibilità/invisibilità dell'immagine
+//// ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
 
 
-const h1 = document.getElementById("Title")
+const h1 = document.getElementById("title")
 const address = document.querySelector(".address")
-const links = document.querySelectorAll(".a")
-const priceColor = document.querySelectorAll(".price")
+const links = document.querySelectorAll("a")
+const coloredPrice = document.getElementsByClassName("price")
+const images = document.querySelectorAll("img")
 
 /*FUNCTIONS*/
 function changeTitle() {
@@ -43,6 +45,34 @@ function changeFooter() {
     address.innerText = "via Uomo Gatto 5, Sarabanda"
 }
 
+function addClassToImg() {
+    for (let i= 0; i<images.length; i++){
+        images[i].classList.add("cutePhone")
+    }
+}
+
+function hideImg(){
+    for (let i= 0; i<images.length; i++){
+        images[i].style.visibility = "hidden"
+    }
+}
+
+//*Per cambiare colore Random ai prezzi*//
+
+function priceColor (randomColor){
+const r = Math.floor(Math.random()*255)
+const g = Math.floor(Math.random()*255)
+const b = Math.floor(Math.random()*255)
+
+    randomColor.style.color= `rgb(${r},${g},${b})`
+}
+
+    for (let i=0; i<coloredPrice.length; i++){
+        coloredPrice[i].addEventListener("click", function(){priceColor(coloredPrice[i])})
+    }
+
+
+    
 
 /* TRIGGERS*/
 
@@ -50,3 +80,4 @@ h1.addEventListener("mouseover", changeTitle)
 h1.addEventListener("mouseout", resetTitle)
 document.addEventListener("click", changeBgColor)
 address.addEventListener("mouseover", changeFooter)
+addClassToImg()
