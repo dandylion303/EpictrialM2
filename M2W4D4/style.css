@@ -4,12 +4,19 @@ body {
     padding:0px;
 }
 
+h1{
+    font-family: "Baumans";
+    text-align: center;
+    background-color: aquamarine;
+    margin: 0px;
+    padding: 15px 
+}
 
 form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(198, 214, 209);
+    background-color: rgb(167, 209, 196);
     padding: 100px;
     gap: 25px;
     border-radius: 0px 0px 50px 50px;
@@ -33,6 +40,12 @@ input {
     border: 0px;
 }
 
+input:focus {
+    border: solid 2px;
+    border-color: aquamarine;
+    outline: none;
+}
+
 .search {
     display: flex;
     width: 100%;
@@ -41,16 +54,21 @@ input {
 }
 
 .search :hover{
-    background-color: rgb(186, 233, 211);
+    background-color: aquamarine;
 }
 
 #results {
     padding: 50px;
+    width: 50%;
 }
 
 li{
     margin: 25px;
     font-family: "Space Grotesk", sans-serif;
+}
+
+li:hover{
+    background-color: rgb(186, 233, 211);
 }
 
 h2{

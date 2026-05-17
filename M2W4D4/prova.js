@@ -151,8 +151,8 @@ function searchJobs(titleInput, locationInput) {
     count: 0
   }
 
+//Al sicuro le metto tutte lowerCase. Playing it safe.
   for (let i = 0; i < jobs.length; i++) {
-
     const currentJob = jobs[i]
     const jobTitle = currentJob.title.toLowerCase()
     const jobLocation = currentJob.location.toLowerCase()
