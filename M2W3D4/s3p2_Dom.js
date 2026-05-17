@@ -51,11 +51,11 @@ function addClassToImg() {
     }
 }
 
-function hideImg(){
-    for (let i= 0; i<images.length; i++){
-        images[i].style.visibility = "hidden"
-    }
-}
+function hideImg(img){
+   img.style.visibility= "hidden"}
+    for (const img of images){
+        img.addEventListener("mouseenter", function() {hideImg(img)})}
+
 
 //*Per cambiare colore Random ai prezzi*//
 
